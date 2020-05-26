@@ -1,1 +1,14 @@
-## WRITE YOUR DOCKER COMPOSE HERE!
+version: '3'
+services:
+  web:
+    build: ./server
+    ports:
+      - '4444:8080'
+  db:
+    image: 'postgras'
+    restart: always
+    environment:
+     POSTGRES_PASSWORD: 'password1'
+    ports: 
+      - '5432:5432'
+    
